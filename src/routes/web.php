@@ -18,5 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::middleware('auth')->group(function () {
-     Route::get('/', [AuthController::class, 'index']);
+    Route::get('/', [AuthController::class, 'index']);
  });
