@@ -71,3 +71,33 @@
     font-size: 14px;
     margin-top: 5px;
 }
+
+
+/* プロフィール画像 */
+.profile-image {
+    width: 120px;
+    /* 横幅 */
+    height: 120px;
+    /* 高さ */
+    border-radius: 50%;
+    /* 丸くする */
+    object-fit: cover;
+    /* 画像を中央で切り抜く */
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* 画像アップロードボタンの余白 */
+.form__group-content input[type="file"] {
+    margin-top: 10px;
+}
+
+/* 全体の余白調整 */
+.mypage-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    /* 余白追加 */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}

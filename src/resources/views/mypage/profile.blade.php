@@ -15,20 +15,18 @@
 
         {{-- プロフィール画像 --}}
         <div class="form__group">
-            <div class="form__group-title">
-                <span class="form__label--item">プロフィール画像</span>
-            </div>
             <div class="form__group-content">
-                <div class="form__input--text">
-                    <input type="file" name="image" accept=".jpg,.jpeg,.png">
-                </div>
-                <div class="form__error">
-                    @error('image')
-                    {{ $message }}
-                    @enderror
-                </div>
+                @if($user->image)
+                <img src="{{ asset('storage/'.$user->image) }}" class="profile-image" alt="プロフィール画像">
+                @endif
+                <input type="file" name="image" accept=".jpg,.jpeg,.png">
+                @error('image')
+                <div class="form__error">{{ $message }}</div>
+                @enderror
             </div>
         </div>
+
+
 
         {{-- ユーザー名 --}}
         <div class="form__group">
