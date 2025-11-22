@@ -1,0 +1,109 @@
+@extends('layouts.app')
+
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/login.css') }}">
+@endsection
+
+@section('content')
+<div class="login-form__content">
+    <div class="login-form__heading">
+        <h2>プロフィール編集</h2>
+    </div>
+
+    <form class="form" action="{{ route('mypage.update') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+
+        {{-- プロフィール画像 --}}
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">プロフィール画像</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--text">
+                    <input type="file" name="image">
+                </div>
+                <div class="form__error">
+                    @error('image')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+        </div>
+
+        {{-- ユーザー名 --}}
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">ユーザー名</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--text">
+                    <input type="text" name="name" value="{{ old('name', $user->name) }}">
+                </div>
+                <div class="form__error">
+                    @error('name')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+        </div>
+
+        {{-- 郵便番号 --}}
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">郵便番号</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--text">
+                    <input type="text" name="zip" value="{{ old('zip', $user->zip) }}">
+                </div>
+                <div class="form__error">
+                    @error('zip')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+        </div>
+
+        {{-- 住所 --}}
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">住所</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--text">
+                    <input type="text" name="address" value="{{ old('address', $user->address) }}">
+                </div>
+                <div class="form__error">
+                    @error('address')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+        </div>
+
+        {{-- 建物名 --}}
+        <div class="form__group">
+            <div class="form__group-title">
+                <span class="form__label--item">建物名</span>
+            </div>
+            <div class="form__group-content">
+                <div class="form__input--text">
+                    <input type="text" name="building" value="{{ old('building', $user->building) }}">
+                </div>
+                <div class="form__error">
+                    @error('building')
+                    {{ $message }}
+                    @enderror
+                </div>
+            </div>
+        </div>
+
+        {{-- ボタン --}}
+        <div class="form__button">
+            <button class="form__button-submit" type="submit">更新する</button>
+            <a href="{{ route('mypage.show') }}" class="form__button-submit" style="background-color:#6c757d; margin-left:10px;">戻る</a>
+        </div>
+
+    </form>
+</div>
+@endsection

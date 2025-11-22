@@ -18,7 +18,7 @@ class MypageController extends Controller
     public function edit()
     {
         $user = auth()->user();
-        return view('mypage.edit', compact('user'));
+        return view('mypage.profile', compact('user'));
     }
 
     // プロフィール更新処理
@@ -35,6 +35,7 @@ class MypageController extends Controller
         $user->name    = $request->name;
         $user->zip     = $request->zip;
         $user->address = $request->address;
+        $user->building = $request->building;
         $user->save();
 
         return redirect()->route('mypage.show')->with('success', '更新しました');
