@@ -7,7 +7,7 @@
 @section('content')
 <div class="login-form__content">
     <div class="login-form__heading">
-        <h2>プロフィール編集</h2>
+        <h2>プロフィール設定</h2>
     </div>
 
     <form class="form" action="{{ route('mypage.update') }}" method="POST" enctype="multipart/form-data">
@@ -20,7 +20,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="file" name="image">
+                    <input type="file" name="image" accept=".jpg,.jpeg,.png">
                 </div>
                 <div class="form__error">
                     @error('image')

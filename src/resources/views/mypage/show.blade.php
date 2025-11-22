@@ -1,48 +1,50 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/login.css') }}">
+<link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
 @endsection
 
 @section('content')
-<div class="login-form__content">
-    <div class="login-form__heading">
-        <h2>マイページ</h2>
-    </div>
+<div class="mypage-container">
+    <h2>マイページ</h2>
 
+    {{-- ユーザー名 --}}
     <div class="form__group">
-        <div class="form__group-title">
-            <span class="form__label--item">ユーザー名</span>
-        </div>
+        <div class="form__group-title"><span>ユーザー名</span></div>
         <div class="form__group-content">
-            <p>{{ $user->name ?? '' }}</p>
-        </div>
-    </div>
-
-    <div class="form__group">
-        <div class="form__group-title">
-            <span class="form__label--item">郵便番号</span>
-        </div>
-        <div class="form__group-content">
-            <p>{{ $user->zip ?? '' }}</p>
+            <div class="form__input--text readonly">
+                <input type="text" value="{{ $user->name ?? '' }}" readonly>
+            </div>
         </div>
     </div>
 
+    {{-- 郵便番号 --}}
     <div class="form__group">
-        <div class="form__group-title">
-            <span class="form__label--item">住所</span>
-        </div>
+        <div class="form__group-title"><span>郵便番号</span></div>
         <div class="form__group-content">
-            <p>{{ $user->address ?? '' }}</p>
+            <div class="form__input--text readonly">
+                <input type="text" value="{{ $user->zip ?? '' }}" readonly>
+            </div>
         </div>
     </div>
 
+    {{-- 住所 --}}
     <div class="form__group">
-        <div class="form__group-title">
-            <span class="form__label--item">建物名</span>
-        </div>
+        <div class="form__group-title"><span>住所</span></div>
         <div class="form__group-content">
-            <p>{{ $user->building ?? '' }}</p>
+            <div class="form__input--text readonly">
+                <input type="text" value="{{ $user->address ?? '' }}" readonly>
+            </div>
+        </div>
+    </div>
+
+    {{-- 建物名 --}}
+    <div class="form__group">
+        <div class="form__group-title"><span>建物名</span></div>
+        <div class="form__group-content">
+            <div class="form__input--text readonly">
+                <input type="text" value="{{ $user->building ?? '' }}" readonly>
+            </div>
         </div>
     </div>
 

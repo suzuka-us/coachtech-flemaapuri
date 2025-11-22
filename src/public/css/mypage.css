@@ -1,31 +1,73 @@
+/* マイページ全体 */
 .mypage-container {
     max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 0;
 }
 
-.mypage-container h1 {
+/* 見出し */
+.mypage-container h1,
+.mypage-container h2 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.mypage-container p {
-    margin-bottom: 10px;
-    line-height: 1.5;
+/* フォームグループ */
+.form__group {
+    margin-bottom: 15px;
 }
 
-.mypage-container .button {
+/* ラベル */
+.form__group-title span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 入力欄 */
+.form__input--text input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* 読み取り専用の入力 */
+.form__input--text.readonly input {
+    background-color: #f9f9f9;
+    border-color: #ddd;
+    color: #555;
+}
+
+/* ボタン */
+.form__button {
+    margin-top: 20px;
+}
+
+.form__button-submit {
     display: inline-block;
     padding: 8px 16px;
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
+    border: none;
+    cursor: pointer;
 }
 
-.mypage-container .button:hover {
+.form__button-submit:hover {
     background-color: #0056b3;
+}
+
+/* 戻るボタン（グレー） */
+.form__button-submit.back {
+    background-color: #6c757d;
+    margin-left: 10px;
+}
+
+.form__error {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
 }
