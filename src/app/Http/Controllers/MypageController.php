@@ -36,7 +36,8 @@ class MypageController extends Controller
         $user->zip     = $request->zip;
         $user->address = $request->address;
         $user->building = $request->building;
-        $user->save();
+        
+        $user->update();
 
         return redirect()->route('mypage.show')->with('success', '更新しました');
     }

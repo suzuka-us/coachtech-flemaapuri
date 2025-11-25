@@ -1,6 +1,6 @@
 /* マイページ全体 */
 .mypage-container {
-    max-width: 600px;
+    max-width: 500px;
     margin: 20px auto;
     padding: 0;
 }
@@ -100,4 +100,27 @@
     /* 余白追加 */
     background-color: #f9f9f9;
     border-radius: 8px;
+}
+/* 横並びにする */
+.profile-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* 画像とボタンの間隔 */
+}
+
+/* 丸画像を小さめに */
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* 右側のボタンエリア */
+.profile-file-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* ここがポイント：左寄せ */
 }

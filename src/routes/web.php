@@ -3,30 +3,22 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MypageController;
+use App\Http\Controllers\ProductController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+// =======================================
+// 修正ポイント1: トップページ / を ProductController@index に変更
+// 未認証ユーザーも見れるようにここで商品一覧を表示
+Route::get('/', [ProductController::class, 'index'])->name('products.index'); // ← 追加・変更
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// =======================================
+// 修正ポイント2: AuthController@index ルートは /home に変更
 Route::middleware('auth')->group(function () {
-Route::get('/', [AuthController::class, 'index']);
- });
 
-Route::middleware('auth')->group(
-    function () {
-Route::get('/mypage', [MypageController::class, 'show'])->name('mypage.show');           // プロフィール表示
-Route::get('/mypage/profile', [MypageController::class, 'edit'])->name('mypage.edit');   // プロフィール編集画面
-Route::post('/mypage/profile', [MypageController::class, 'update'])->name('mypage.update'); // 更新処理
+    // マイページ関連
+    Route::get('/mypage', [MypageController::class, 'show'])->name('mypage.show');
+    Route::get('/mypage/profile', [MypageController::class, 'edit'])->name('mypage.edit');
+    Route::post('/mypage/profile', [MypageController::class, 'update'])->name('mypage.update');
 
-    }
-);
+    // ログイン後のホーム
+    Route::get('/home', [AuthController::class, 'index'])->name('home');
+});

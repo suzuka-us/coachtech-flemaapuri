@@ -1,0 +1,41 @@
+.page-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.product-card {
+    position: relative;
+}
+
+.product-image-wrapper {
+    position: relative;
+}
+
+.product-image {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Sold ラベル */
+.sold-label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.product-name {
+    margin-top: 8px;
+    font-size: 14px;
+}

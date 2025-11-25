@@ -22,7 +22,7 @@
           <ul class="header-nav">
             @if (Auth::check())
             <li class="header-nav__item">
-              <a class="header-nav__link" href="/mypage">マイページ</a>
+              <a class="header-nav__link" href="/mypage/profile">マイページ</a>
             </li>
             <li class="header-nav__item">
                 <form class="form" action="/logout" method="post">
