@@ -18,6 +18,14 @@
         <a class="header__logo" href="/">
           <img src="{{ asset('images/coachtech.png') }}" alt="ロゴ">
         </a>
+        <form action="{{ route('products.index') }}" method="GET" class="header-search">
+          <input
+            type="text"
+            name="keyword"
+            class="header-search-input"
+            placeholder="何をお探しですか？"
+            value="{{ request('keyword') }}">
+        </form>
         <nav>
           <ul class="header-nav">
             @if (Auth::check())
@@ -25,8 +33,8 @@
               <a class="header-nav__link" href="/mypage/profile">マイページ</a>
             </li>
             <li class="header-nav__item">
-                <form class="form" action="/logout" method="post">
-               @csrf
+              <form class="form" action="/logout" method="post">
+                @csrf
                 <button class="header-nav__button">ログアウト</button>
               </form>
             </li>
@@ -43,4 +51,3 @@
 </body>
 
 </html>
-

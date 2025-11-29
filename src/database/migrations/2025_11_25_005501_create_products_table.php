@@ -17,20 +17,31 @@ return new class extends Migration
             // 商品名
             $table->string('name');
 
-            // 商品画像（storage に保存するパス）
-            $table->string('image')->nullable();
+            // 金額
+            $table->integer('price')->nullable();
 
-            // 説明文（必要なら）
+            // ブランド
+            $table->string('brand')->nullable();
+
+            // 説明文
             $table->text('description')->nullable();
 
-            // 出品者ユーザーID
+            // 商品画像パス
+            $table->string('image')->nullable();
+
+            // 商品状態
+            $table->string('condition')->nullable();
+
+            // カテゴリID（外部キー）
+            $table->foreignId('category_id')
+                ->constrained()
+                ->onDelete('cascade');
+
+            // 出品者
             $table->unsignedBigInteger('user_id');
 
-            // 購入者ユーザーID（購入されていない場合は null）
+            // 購入者（null 可）
             $table->unsignedBigInteger('buyer_id')->nullable();
-
-            // 金額（必要に応じて）
-            $table->integer('price')->nullable();
 
             $table->timestamps();
         });

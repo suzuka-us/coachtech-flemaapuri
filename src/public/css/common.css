@@ -43,3 +43,20 @@
     font-size: 16px;
     cursor: pointer;
 }
+
+.header-search {
+    margin-left: 20px;
+}
+
+.header-search-input {
+    width: 300px;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.header-search-input::placeholder {
+    color: #bbb;
+    /* 薄い文字 */
+}

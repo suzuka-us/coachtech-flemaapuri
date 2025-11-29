@@ -5,8 +5,13 @@
 <div class="product-list">
   @foreach($products as $product)
   <div class="product-item">
-    <img src="{{ asset('storage/'.$product->image) }}" alt="{{ $product->name }}" class="product-image">
+
+    {{-- ★ 画像パス修正：S3 の URL をそのまま使う --}}
+    <img src="{{ $product->image }}" alt="{{ $product->name }}" class="product-image">
+
     <p class="product-name">{{ $product->name }}</p>
+    <p class="product-price">¥{{ number_format($product->price) }}</p>
+    <p class="product-brand">{{ $product->brand }}</p>
 
     @if($product->buyer_id)
     <span class="sold-label">Sold</span>
