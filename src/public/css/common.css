@@ -60,3 +60,31 @@
     color: #bbb;
     /* 薄い文字 */
 }
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* ボタンの間隔 */
+}
+
+.header-nav__item {
+    list-style: none;
+}
+
+.header-nav__link,
+.header-nav__button {
+    padding: 6px 12px;
+    background: #fff;
+    color: #333;
+    border-radius: 4px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header-nav__button:hover,
+.header-nav__link:hover {
+    opacity: 0.8;
+}
+

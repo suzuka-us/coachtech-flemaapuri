@@ -16,7 +16,8 @@ class CategorySeeder extends Seeder
             'ファッション',
             'PC周辺機器',
             '日用品',
-            '美容'
+            '美容',
+            'コスメ',
         ];
 
         foreach ($categories as $name) {

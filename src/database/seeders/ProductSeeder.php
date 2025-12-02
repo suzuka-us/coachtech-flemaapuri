@@ -29,7 +29,7 @@ class ProductSeeder extends Seeder
                 'image' => 'https://coachtech-matter.s3.ap-northeast-1.amazonaws.com/image/HDD+Hard+Disk.jpg',
                 'condition' => '目立った傷や汚れなし',
                 'category_id' => 2,
-                'user_id' => 2,
+                'user_id' => 1,
                 'buyer_id' => null,
             ],
             [

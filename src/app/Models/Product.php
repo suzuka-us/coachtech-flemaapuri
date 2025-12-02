@@ -8,4 +8,22 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
+
+    // カテゴリー（1商品は1カテゴリに所属）
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+
+    // コメント（1商品は複数コメントを持つ）
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    // いいね（1商品は複数いいねを持つ）
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
 }

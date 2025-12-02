@@ -2,6 +2,17 @@
 
 @section('content')
 <h1>商品一覧</h1>
+{{-- ▼▼ ここを追加 ▼▼ --}}
+<div class="product-tabs" style="margin-bottom: 20px;">
+  <a href="/" class="{{ request('tab') !== 'mylist' ? 'active-tab' : '' }}">
+    すべて
+  </a>
+
+  <a href="/?tab=mylist" class="{{ request('tab') === 'mylist' ? 'active-tab' : '' }}">
+    マイリスト
+  </a>
+</div>
+{{-- ▲▲ ここまで追加 ▲▲ --}}
 <div class="product-list">
   @foreach($products as $product)
   <div class="product-item">

@@ -8,14 +8,39 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $userId = Auth::id(); // ログインしていれば自分のID、未認証なら null
+        $userId = Auth::id();
+        $tab = $request->query('tab');
 
-        $products = Product::query()
-            ->when($userId, fn($query, $userId) => $query->where('user_id', '!=', $userId))
-            ->get();
+        if ($tab === 'mylist' && $userId) {
+            // 自分の商品だけ
+            $products = Product::where('user_id', $userId)->get();
+        } else {
+            // 自分の商品を除いた商品
+            $products = Product::query();
+
+            if ($userId) {
+                $products->where('user_id', '!=', $userId);
+            }
+
+            $products = $products->get();
+        }
 
         return view('products.index', compact('products'));
+    }
+
+    // ←←← ここから追加050607
+
+    public function show(Product $item)
+    {
+        // 商品詳細に必要なリレーションを読み込む
+        $item->load([
+            'category',
+            'comments.user',
+            'likes'
+        ]);
+
+        return view('products.show', compact('item'));
     }
 }
