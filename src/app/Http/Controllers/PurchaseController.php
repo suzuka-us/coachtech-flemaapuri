@@ -20,12 +20,13 @@ class PurchaseController extends Controller
 
     public function updateAddress(Request $request, Product $item)
     {
-        dd(Auth::user());
+        
         $request->validate([
             'address' => 'required|string|max:255',
         ]);
 
         Auth::user()->update(['address' => $request->address]);
+
 
         return redirect()->route('purchase.show', $item);
     }

@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MypageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\CommentController; 
+
 
 // =======================================
 // トップページ（商品一覧） 未ログインでもOK
@@ -32,5 +34,7 @@ Route::middleware('auth')->group(function () {
     // 送付先住所変更画面
     Route::get('/purchase/address/{item}', [PurchaseController::class, 'editAddress'])->name('purchase.editAddress');
     Route::post('/purchase/address/{item}', [PurchaseController::class, 'updateAddress'])->name('purchase.updateAddress');
+
+    Route::post('/item/{item}/comment', [CommentController::class, 'store'])->name('comment.store');
 });
 

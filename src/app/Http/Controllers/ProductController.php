@@ -41,6 +41,9 @@ class ProductController extends Controller
             'likes'
         ]);
 
+
+        $item->load(['category', 'comments.user']);
+
         return view('products.show', compact('item'));
     }
 }
