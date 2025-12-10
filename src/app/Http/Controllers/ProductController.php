@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -30,7 +31,7 @@ class ProductController extends Controller
         return view('products.index', compact('products'));
     }
 
-    // ←←← ここから追加050607
+    // ←←← ここから追加
 
     public function show(Product $item)
     {
@@ -45,5 +46,33 @@ class ProductController extends Controller
         $item->load(['category', 'comments.user']);
 
         return view('products.show', compact('item'));
+    }
+
+    //商品出品画面追加
+    // 出品画面
+    public function create()
+    {
+        $categories = Category::all();
+        return view('products.create', compact('categories'));
+    }
+
+    // 出品処理
+    public function store(Request $request)
+    {
+        $product = Product::create([
+            'name' => $request->name,
+            'brand' => $request->brand,
+            'description' => $request->description,
+            'price' => $request->price,
+            'condition' => $request->condition,
+            'image' => $request->image, 
+        ]);
+
+        // 多対多カテゴリ保存
+        if ($request->categories) {
+            $product->categories()->sync($request->categories);
+        }
+
+        return redirect()->route('products.show', $product);
     }
 }

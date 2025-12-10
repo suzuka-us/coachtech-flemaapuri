@@ -10,10 +10,19 @@ class Product extends Model
     use HasFactory;
 
     // カテゴリー（1商品は1カテゴリに所属）
-    public function category()
+    //public function category()
+    // {
+    // return $this->belongsTo(Category::class);
+    
+    
+    
+    // カテゴリー（1商品は複数カテゴリを持つ）
+    public function categories()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsToMany(Category::class);
     }
+
+
 
     // コメント（1商品は複数コメントを持つ）
     public function comments()

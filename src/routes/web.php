@@ -21,6 +21,7 @@ Route::get('/item/{item}', [ProductController::class, 'show'])->name('products.s
 Route::middleware('auth')->group(function () {
 
     // マイページ関連
+    
     Route::get('/mypage', [MypageController::class, 'show'])->name('mypage.show');
     Route::get('/mypage/profile', [MypageController::class, 'edit'])->name('mypage.edit');
     Route::post('/mypage/profile', [MypageController::class, 'update'])->name('mypage.update');
@@ -36,5 +37,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/purchase/address/{item}', [PurchaseController::class, 'updateAddress'])->name('purchase.updateAddress');
 
     Route::post('/item/{item}/comment', [CommentController::class, 'store'])->name('comment.store');
+
+    // 商品出品
+    Route::get('/sell', [ProductController::class, 'create'])->name('products.create');
+    Route::post('/sell', [ProductController::class, 'store'])->name('products.store');
+
+    
 });
 

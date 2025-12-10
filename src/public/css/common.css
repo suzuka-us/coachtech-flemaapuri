@@ -4,8 +4,8 @@
 
 .header__inner {
     margin: 0 auto;
-    padding: 20px 15px;
-    max-width: 1230px;
+    padding: 3px 80px;
+    max-width: 1512px;
 }
 
 .header-utilities {
@@ -19,17 +19,10 @@
     text-decoration: none;
     font-weight: bold;
     font-size: 24px;
+    width: 12rem;
 }
 
-.header-utilities nav {
-    width: 18%;
-}
 
-.header-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
 
 .header-nav__link {
     color: #fff;
@@ -74,10 +67,10 @@
 
 .header-nav__link,
 .header-nav__button {
-    padding: 6px 12px;
+    padding: 8px 14px;
     background: #fff;
     color: #333;
-    border-radius: 4px;
+    border-radius: 6px;
     text-decoration: none;
     border: none;
     cursor: pointer;
@@ -86,5 +79,68 @@
 .header-nav__button:hover,
 .header-nav__link:hover {
     opacity: 0.8;
+
+}
+
+
+
+/* 商品出品画面*/
+.sell-form {
+    width: 400px;
+    /* 幅の調整 */
+    margin: 40px auto;
+    /* 中央寄せ（左右 auto） */
+}
+
+.sell-form label,
+.sell-form input,
+.sell-form textarea,
+.sell-form select,
+.sell-form button {
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+}
+
+
+
+/* カテゴリタグ）*/
+.sell-form .category-box .category-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 2px solid red;
+    padding: 5px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+    /* 折り返さない */
+    width: auto;
+    max-width: none;
+}
+
+/* 隠すチェックボックス（保持） */
+.sell-form .category-box .category-tag input[type="checkbox"] {
+    display: none;
+}
+
+/* チェック時の見た目 */
+.sell-form .category-box .category-tag input[type="checkbox"]:checked+span {
+    background: red;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 30px;
+}
+
+.sell-form label.category-tag {
+    width: auto;
+}
+
+.sell-title {
+    text-align: center;
+    font-size: 28px;
+    margin: 20px 0;
 }
 

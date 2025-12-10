@@ -10,14 +10,19 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            '時計',
-            '家電',
-            '食品',
             'ファッション',
-            'PC周辺機器',
-            '日用品',
-            '美容',
+            '家電',
+            'インテリア',
+            'レディース・メンズ',
             'コスメ',
+            '本',
+            'ゲーム',
+            'スポーツ',
+            'キッチン',
+            'ハンドメイド',
+            'アクセサリー',
+            'おもちゃ',
+            'ベビー・キッズ'
         ];
 
         foreach ($categories as $name) {

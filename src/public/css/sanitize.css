@@ -243,6 +243,7 @@ iframe {
 
 img {
     border-style: none;
+    width: 100%;
 }
 
 /**
