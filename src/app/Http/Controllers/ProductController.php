@@ -27,7 +27,7 @@ class ProductController extends Controller
 
             $products = $products->get();
         }
-
+    
         return view('products.index', compact('products'));
     }
 
@@ -65,7 +65,8 @@ class ProductController extends Controller
             'description' => $request->description,
             'price' => $request->price,
             'condition' => $request->condition,
-            'image' => $request->image, 
+            'image' => $request->imagePath,
+            'user_id'     => auth()->id(), // 出品者ID
         ]);
 
         // 多対多カテゴリ保存

@@ -6,7 +6,7 @@
 
         <main>
             <h1 class="sell-title">商品の出品</h1>
-            <form class="sell-form" action="/sell" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('products.store') }}" method="POST" class="sell-form" enctype="multipart/form-data">
                 @csrf
 
                 <label>商品の画像</label>
