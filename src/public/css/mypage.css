@@ -1,115 +1,52 @@
-/* マイページ全体 */
+/* ===== マイページ全体 ===== */
 .mypage-container {
-    max-width: 500px;
+    max-width: 600px;
     margin: 20px auto;
-    padding: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
 }
 
 /* 見出し */
-.mypage-container h1,
-.mypage-container h2 {
+.mypage-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
-/* フォームグループ */
+/* ===== フォーム ===== */
 .form__group {
     margin-bottom: 15px;
 }
 
-/* ラベル */
 .form__group-title span {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-/* 入力欄 */
 .form__input--text input {
     width: 100%;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box;
 }
 
-/* 読み取り専用の入力 */
-.form__input--text.readonly input {
-    background-color: #f9f9f9;
-    border-color: #ddd;
-    color: #555;
-}
-
-/* ボタン */
-.form__button {
-    margin-top: 20px;
-}
-
-.form__button-submit {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #007BFF;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-}
-
-.form__button-submit:hover {
-    background-color: #0056b3;
-}
-
-/* 戻るボタン（グレー） */
-.form__button-submit.back {
-    background-color: #6c757d;
-    margin-left: 10px;
-}
-
+/* エラー表示 */
 .form__error {
     color: red;
     font-size: 14px;
     margin-top: 5px;
 }
 
-
-/* プロフィール画像 */
-.profile-image {
-    width: 120px;
-    /* 横幅 */
-    height: 120px;
-    /* 高さ */
-    border-radius: 50%;
-    /* 丸くする */
-    object-fit: cover;
-    /* 画像を中央で切り抜く */
-    display: block;
-    margin-bottom: 15px;
-}
-
-/* 画像アップロードボタンの余白 */
-.form__group-content input[type="file"] {
-    margin-top: 10px;
-}
-
-/* 全体の余白調整 */
-.mypage-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    /* 余白追加 */
-    background-color: #f9f9f9;
-    border-radius: 8px;
-}
-/* 横並びにする */
+/* ===== プロフィール画像エリア ===== */
 .profile-row {
     display: flex;
     align-items: center;
     gap: 20px;
-    /* 画像とボタンの間隔 */
 }
 
-/* 丸画像を小さめに */
+/* 丸いプロフィール画像 */
 .profile-image {
     width: 80px;
     height: 80px;
@@ -117,10 +54,48 @@
     object-fit: cover;
 }
 
-/* 右側のボタンエリア */
+/* ファイル選択エリア */
 .profile-file-area {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    /* ここがポイント：左寄せ */
+    align-items: center;
+}
+
+/* ボタン風ラベル（画像を選択する） */
+.profile-file-label {
+    color: #e60000;
+    border: 2px solid #e60000;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* hover */
+.profile-file-label:hover {
+    background-color: #e60000;
+    color: #fff;
+}
+
+/* inputは非表示（※これだけでOK） */
+.profile-file-label input[type="file"] {
+    display: none;
+}
+
+/* ===== ボタン ===== */
+.form__button {
+    margin-top: 20px;
+}
+
+.form__button-submit {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #e60000;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }

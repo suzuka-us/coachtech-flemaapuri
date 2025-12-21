@@ -22,9 +22,15 @@
     /* ファイル選択エリア */
     .profile-file-area {
         display: flex;
-        flex-direction: column;
         justify-content: center;
     }
+
+    .profile-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
 
     .profile-image-wrapper input[type="file"] {
         display: block;
@@ -36,7 +42,7 @@
 @section('content')
 <div class="login-form__content">
     <div class="login-form__heading">
-        <h2>プロフィール設定</h2>
+        <h1>プロフィール設定</h1>
     </div>
 
     <form class="form" action="{{ route('mypage.update') }}" method="POST" enctype="multipart/form-data">
@@ -52,13 +58,15 @@
 
                 <!-- 右：ファイル選択 -->
                 <div class="profile-file-area">
-                    <label class="profile-file-label">画像を選択する</label>
-                    <input type="file" name="image" accept=".jpg,.jpeg,.png">
+                    <label class="profile-file-label">
+                        画像を選択する
+                        <input type="file" name="image" accept=".jpg,.jpeg,.png">
+                    </label>
+
                     @error('image')
                     <div class="form__error">{{ $message }}</div>
                     @enderror
                 </div>
-
             </div>
         </div>
 
@@ -118,9 +126,6 @@
         {{-- ボタン --}}
         <div class="form__button">
             <button class="form__button-submit" type="submit">更新する</button>
-            <a href="{{ route('mypage.show') }}" class="form__button-submit" style="background-color:#6c757d; margin-left:10px;">
-                戻る
-            </a>
         </div>
 
     </form>

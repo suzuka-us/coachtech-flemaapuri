@@ -1,3 +1,4 @@
+/* ===== ヘッダー ===== */
 .header {
     background: #000;
 }
@@ -22,21 +23,7 @@
     width: 12rem;
 }
 
-
-
-.header-nav__link {
-    color: #fff;
-    text-decoration: none;
-}
-
-.header-nav__button {
-    border: none;
-    background: transparent;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-}
-
+/* ===== 検索 ===== */
 .header-search {
     margin-left: 20px;
 }
@@ -51,45 +38,54 @@
 
 .header-search-input::placeholder {
     color: #bbb;
-    /* 薄い文字 */
 }
 
+/* ===== ナビ ===== */
 .header-nav {
     display: flex;
     align-items: center;
     gap: 20px;
-    /* ボタンの間隔 */
 }
 
 .header-nav__item {
     list-style: none;
 }
 
+/* --- マイページ・ログアウト（文字だけ） --- */
 .header-nav__link,
 .header-nav__button {
+    background: none;
+    color: #fff;
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* hover */
+.header-nav__link:hover,
+.header-nav__button:hover {
+    opacity: 0.7;
+}
+
+/* --- 出品ボタン（今まで通り） --- */
+.header-nav__link--sell {
     padding: 8px 14px;
     background: #fff;
     color: #333;
     border-radius: 6px;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
+    font-size: 16px;
 }
 
-.header-nav__button:hover,
-.header-nav__link:hover {
-    opacity: 0.8;
-
+.header-nav__link--sell:hover {
+    opacity: 0.85;
 }
 
-
-
-/* 商品出品画面*/
+/* ===== 商品出品画面 ===== */
 .sell-form {
     width: 400px;
-    /* 幅の調整 */
     margin: 40px auto;
-    /* 中央寄せ（左右 auto） */
 }
 
 .sell-form label,
@@ -102,9 +98,7 @@
     margin-bottom: 15px;
 }
 
-
-
-/* カテゴリタグ）*/
+/* ===== カテゴリタグ ===== */
 .sell-form .category-box .category-tag {
     display: inline-flex;
     align-items: center;
@@ -115,17 +109,14 @@
     cursor: pointer;
     font-size: 14px;
     white-space: nowrap;
-    /* 折り返さない */
     width: auto;
     max-width: none;
 }
 
-/* 隠すチェックボックス（保持） */
 .sell-form .category-box .category-tag input[type="checkbox"] {
     display: none;
 }
 
-/* チェック時の見た目 */
 .sell-form .category-box .category-tag input[type="checkbox"]:checked+span {
     background: red;
     color: #fff;
@@ -143,4 +134,3 @@
     font-size: 28px;
     margin: 20px 0;
 }
-

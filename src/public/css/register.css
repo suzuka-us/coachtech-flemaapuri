@@ -43,14 +43,18 @@
     margin-top: 20px;
 }
 
-.form__button-submit {
-    padding: 10px;
-    width: 30%;
-    height: 50px;
+
+.register-button {
+    background-color: #e60000;
+    /* 赤 */
+    color: #ffffff;
+    /* 白文字 */
+    width: 100%;
+    /* 横幅を揃える */
+    padding: 12px 0;
     border: none;
-    border-radius: 3px;
-    background: #000;
-    color: #fff;
+    border-radius: 4px;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -58,3 +62,4 @@
     margin-top: 20px;
     text-align: center;
 }
+
