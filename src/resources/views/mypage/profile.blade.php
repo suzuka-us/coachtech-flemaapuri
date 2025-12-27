@@ -1,43 +1,9 @@
 @extends('layouts.app')
 
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/login.css') }}">
-
-<style>
-    /* 画像が login.css に負けないようにデザイン固定 */
-    .profile-image-wrapper {
-        text-align: center !important;
-        margin-bottom: 20px !important;
-    }
-
-    /* 丸いプロフィール画像（小さめに） */
-    .profile-image {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid #ddd;
-    }
-
-    /* ファイル選択エリア */
-    .profile-file-area {
-        display: flex;
-        justify-content: center;
-    }
-
-    .profile-row {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-    }
+<link rel="stylesheet" href="{{ asset('css/mypage.css') }}">
 
 
-    .profile-image-wrapper input[type="file"] {
-        display: block;
-        margin: 0 auto;
-    }
-</style>
-@endsection
 
 @section('content')
 <div class="login-form__content">
